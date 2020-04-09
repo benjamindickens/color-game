@@ -82,7 +82,7 @@ function checkAnswer() {
           nextSequence();
         }, 5500);
       } else {
-        $("h1").html("lvl UP");
+        $("h1").html("lvl<br> UP");
         setTimeout(function () {
           count = 0;
           userClickedPattern = [];
