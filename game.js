@@ -1,7 +1,8 @@
+$(".lol").slideUp(100)
 "use strict";
-alert(
-  "Правила: Запомни последовательность цветов и повтори их. Каждый уровень показывается  только новый цвет. Повтори предыдущие и добавь новый. Удачи! :P ( P.S первые пару конов лагает звук >< )"
-);
+// alert(
+//   "Правила: Запомни последовательность цветов и повтори их. Каждый уровень показывается  только новый цвет. Повтори предыдущие и добавь новый. Удачи! :P ( P.S первые пару конов лагает звук >< )"
+// );
 let userClickedPattern = [];
 let buttonColors = ["red", "blue", "green", "yellow"];
 let gamePattern = [];
@@ -78,9 +79,8 @@ function checkAnswer() {
         setTimeout(function () {
           count = 0;
           userClickedPattern = [];
-          let victory = new Audio("./sounds/victory.mp3");
           nextSequence();
-        }, 4500);
+        }, 5500);
       } else {
         $("h1").html("lvl UP");
         setTimeout(function () {
@@ -115,11 +115,19 @@ function checkAnswer() {
 // }
 // )
 
-$("button").on("click", function () {
+$(".start").on("click", function () {
   if (gamePattern[0] === undefined) {
     nextSequence();
+    $(".lol").slideUp()
     $("button").fadeOut(100);
+
+
   } else {
     null;
   }
 });
+
+
+$(".guidance").on("click", function() {
+  $(".lol").slideToggle()
+})

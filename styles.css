@@ -12,12 +12,12 @@ body {
   display: grid;
   height: 96vh;
   align-content: center;
-  grid-gap:40px;
+  grid-gap: 20px;
   grid-template-rows: auto 1fr auto;
+  padding: 0 10px;
 }
 #level-title {
-
-  padding-top:20px;
+  padding-top: 20px;
   font-family: "Press Start 2P", cursive;
   font-size: 3rem;
   color: #fef2bf;
@@ -25,8 +25,8 @@ body {
 }
 footer {
   font-family: "Press Start 2P", cursive;
-   color: #fef2bf;
-   line-height: 1.5;
+  color: #fef2bf;
+  line-height: 1.5;
 }
 
 .container {
@@ -46,15 +46,20 @@ footer {
   border: 10px solid black;
   border-radius: 20%;
 }
-
+.btns {
+  display: grid;
+  grid-gap: 8px;
+}
 .game-over {
   background-color: red;
   opacity: 0.8;
-  
 }
 .lol {
   justify-self: center;
-  opacity: 0.5;
+  font-family: "Press Start 2P", cursive;
+  color: #fef2bf;
+  line-height: 1.5;
+  font-size: 13px;
 }
 .hide {
   display: none;
@@ -78,34 +83,33 @@ footer {
 .pressed {
   box-shadow: 0 0 20px white;
   background-color: grey;
-  
 }
 button {
   padding: 10px 40px;
   margin: 0 auto;
   border: 10px solid black;
   border-radius: 20%;
-  background-color: #F0F0F0;
+  background-color: #f0f0f0;
   font-family: "Press Start 2P", cursive;
   color: black;
 }
-@media (max-width: 500px){
-#level-title {
-  font-size: 2.3rem;
-}
+@media (max-width: 500px) {
+  #level-title {
+    font-size: 2.3rem;
+  }
 }
 @media (max-height: 700px) and (max-width: 480px) {
-
+    .btn {
+    height: 80px;
+    width: 80px;
+  }
   html {
-    font-size: 12px;
+    font-size: 9px;
   }
 }
 @media (max-height: 600px) and (max-width: 480px) {
-.btn {
-  height: 60px;
-  width:60px;
+  .btn {
+    height: 60px;
+    width: 60px;
+  }
 }
-  
-}
-
-
