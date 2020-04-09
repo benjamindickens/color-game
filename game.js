@@ -18,7 +18,7 @@ function nextSequence() {
   $(`#${randomChosenColor}`).addClass("opacity")
   setTimeout(() => { 
     $(`#${randomChosenColor}`).removeClass("opacity");
-  }, 200);
+  }, 400);
 
   //sound
   playSound(randomChosenColor);
