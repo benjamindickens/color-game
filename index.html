@@ -1,54 +1,44 @@
-
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Ben Dickens" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ben's game</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="author" content="Ben Dickens">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ben's game</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-</head>
-
-<body>
-  <div class="grid">
-    <h1 id="level-title">Press start</h1>
+  <body>
+    <div class="grid">
+      <h1 id="level-title">Press start</h1>
       <div class="container">
+        <div type="button" id="green" class="btn green"></div>
 
-      <div type="button" id="green" class="btn green">
+        <div type="button" id="red" class="btn red"></div>
+
+        <div type="button" id="yellow" class="btn yellow"></div>
+        <div type="button" id="blue" class="btn blue"></div>
+      </div>
+      <div class="btns">
+        <button class="guidance">Правила</button>
+        <div class="lol">
+          <p>Запомни последовательность цветов и повтори их.</p>
+          <p>Каждый уровень добавляется новый цвет.</p>
+          <p>Удачи! :P</p>
+          <p>P.S первые пару конов лагает звук.</p>
+        </div>
+        <button class="start">Start</button>
       </div>
 
-      <div type="button" id="red" class="btn red">
-      </div>
-
-
-
-
-      <div type="button" id="yellow" class="btn yellow">
-      </div>
-      <div type="button" id="blue" class="btn blue">
-      </div>
-
-    </div>
-    <div class="btns">
-    <button class="guidance">Правила</button>
-    <div class="lol">
-       <p>Запомни последовательность цветов и повтори их.</p>
-       <p>Каждый уровень мигает только новый цвет.</p> 
-       <p><span>НО!</span> нужно так же повторить 
-      <span>ПРЕДЫДУЩИЕ</span>. Удачи! :P</p> 
-      <p>P.S первые пару конов лагает звук.</p>
-    </div>
-    <button class="start">Start</button>
+      <footer>&copy; Ben Dickend 09.04.2020</footer>
     </div>
 
-    <footer>&copy; Ben Dickend 09.04.2020</footer>
-  </div>
-  
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-<script src="game.js"></script>
-</body>
-
+    <script src="game.js"></script>
+  </body>
 </html>

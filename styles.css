@@ -8,6 +8,9 @@ body {
   margin: 0;
 }
 
+span {
+  text-decoration-line: underline;
+}
 .grid {
   display: grid;
   height: 96vh;
@@ -57,7 +60,7 @@ footer {
 
 .opacity {
   opacity: 0;
-  transition: 0.5;
+  transition: 2ms;
 }
 
 
@@ -115,6 +118,9 @@ button {
   }
 }
 @media (max-height: 600px) and (max-width: 480px) {
+  .lol {
+    font-size: 11px;
+  }
   .btn {
     height: 60px;
     width: 60px;

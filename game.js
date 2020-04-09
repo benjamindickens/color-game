@@ -10,18 +10,29 @@ let lvl = 0;
 function nextSequence() {
   let randomNumber = Math.floor(Math.random() * 4);
   let randomChosenColor = buttonColors[randomNumber];
+  gamePattern.push(randomChosenColor);
   //animation
   lvl++;
   $("h1").html(`Level<br> ${lvl}`);
-  gamePattern.push(randomChosenColor);
-  console.log(gamePattern);
-  $(`#${randomChosenColor}`).addClass("opacity");
-  setTimeout(() => {
-    $(`#${randomChosenColor}`).removeClass("opacity");
-  }, 400);
+
+  let i = 1;
+  if (gamePattern.length === 1) {
+    setTimeout(() => {
+      $(`#${gamePattern[0]}`).fadeIn(100).fadeOut(100).fadeIn(100);
+      playSound(gamePattern[0]);
+    }, 500);
+  } else {
+    $(`#${gamePattern[0]}`).fadeIn(100).fadeOut(100).fadeIn(100);
+    playSound(gamePattern[0]);
+  }
+  setInterval(function () {
+    $(`#${gamePattern[i]}`).fadeIn(100).fadeOut(100).fadeIn(100);
+    playSound(gamePattern[i]);
+    i++;
+    if (i === gamePattern.length) clearInterval(interval);
+  }, 500);
 
   //sound
-  playSound(randomChosenColor);
 }
 
 $(".btn").on("click", function () {
