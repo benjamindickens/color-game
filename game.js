@@ -52,7 +52,7 @@ let count = 0;
 function checkAnswer() {
   if (count <= gamePattern.length) {
     if (gamePattern[count] !== userClickedPattern[count]) {
-      $("h1").text("ПОТРАЧЕНО");
+      $("h1").html("ПОТРАЧЕНО<br>!!!");
       let wrong = new Audio("./sounds/wrong.mp3");
       wrong.play();
       $("body").addClass("game-over");
