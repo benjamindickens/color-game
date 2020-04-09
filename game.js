@@ -12,6 +12,7 @@ let audio = {
   green: new Audio(`./sounds/green.mp3`),
   white: new Audio(`./sounds/white.mp3`),
   purple: new Audio(`./sounds/purple.mp3`),
+  vin: new Audio(`./sounds/vin.mp3`),
 };
 let userClickedPattern = [];
 let buttonColors = ["red", "blue", "green", "yellow", "white", "purple"];
@@ -25,7 +26,7 @@ function nextSequence() {
     gamePattern.push(randomChosenColor);
     lvl++;
     $("h1").html(`Level<br> ${lvl}`);
-    
+
     let i = 1;
     if (gamePattern.length === 1) {
       setTimeout(() => {
@@ -56,7 +57,6 @@ function nextSequence() {
       setTimeout(() => {
         $(`#${gamePattern[0]}`).fadeIn(100).fadeOut(100).fadeIn(100);
         playSound(gamePattern[0]);
-            
       }, 500);
     } else {
       $(`#${gamePattern[0]}`).fadeIn(100).fadeOut(100).fadeIn(100);
@@ -88,8 +88,8 @@ $(".btn").on("click", function () {
 
 function playSound(name) {
   // let sound = new Audio(`./sounds/${name}.mp3`);
-  switch(name) {
-    case "red" : {
+  switch (name) {
+    case "red": {
       audio.red.play();
       break;
     }
@@ -113,7 +113,6 @@ function playSound(name) {
       audio.purple.play();
       break;
     }
-
   }
 }
 function animation(currentColor) {
@@ -159,6 +158,9 @@ function checkAnswer() {
         }, 5700);
       } else {
         $("h1").html("lvl<br> UP");
+        setTimeout(function () {
+          audio.vin.play();
+        }, 300);
         setTimeout(function () {
           count = 0;
           userClickedPattern = [];
