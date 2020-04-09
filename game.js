@@ -32,7 +32,7 @@ function nextSequence() {
       setTimeout(() => {
         $(`#${gamePattern[0]}`).fadeIn(100).fadeOut(100).fadeIn(100);
         playSound(gamePattern[0]);
-      }, 500);
+      }, 600);
     } else {
       $(`#${gamePattern[0]}`).fadeIn(100).fadeOut(100).fadeIn(100);
       playSound(gamePattern[0]);
@@ -57,7 +57,7 @@ function nextSequence() {
       setTimeout(() => {
         $(`#${gamePattern[0]}`).fadeIn(100).fadeOut(100).fadeIn(100);
         playSound(gamePattern[0]);
-      }, 500);
+      }, 600);
     } else {
       $(`#${gamePattern[0]}`).fadeIn(100).fadeOut(100).fadeIn(100);
       playSound(gamePattern[0]);
