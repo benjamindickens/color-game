@@ -1,5 +1,5 @@
-$(".lol").slideUp(100)
-"use strict";
+$(".lol").slideUp(100);
+("use strict");
 // alert(
 //   "Правила: Запомни последовательность цветов и повтори их. Каждый уровень показывается  только новый цвет. Повтори предыдущие и добавь новый. Удачи! :P ( P.S первые пару конов лагает звук >< )"
 // );
@@ -15,7 +15,10 @@ function nextSequence() {
   $("h1").html(`Level<br> ${lvl}`);
   gamePattern.push(randomChosenColor);
   console.log(gamePattern);
-  $(`#${randomChosenColor}`).fadeIn(100).fadeOut(100).fadeIn(100);
+  $(`#${randomChosenColor}`).addClass("opacity")
+  setTimeout(() => { 
+    $(`#${randomChosenColor}`).removeClass("opacity");
+  }, 200);
 
   //sound
   playSound(randomChosenColor);
@@ -118,16 +121,13 @@ function checkAnswer() {
 $(".start").on("click", function () {
   if (gamePattern[0] === undefined) {
     nextSequence();
-    $(".lol").slideUp()
+    $(".lol").slideUp();
     $("button").fadeOut(100);
-
-
   } else {
     null;
   }
 });
 
-
-$(".guidance").on("click", function() {
-  $(".lol").slideToggle()
-})
+$(".guidance").on("click", function () {
+  $(".lol").slideToggle();
+});
