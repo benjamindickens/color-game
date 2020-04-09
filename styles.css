@@ -63,7 +63,6 @@ footer {
   transition: 2ms;
 }
 
-
 .lol {
   justify-self: center;
   font-family: "Press Start 2P", cursive;
@@ -77,7 +76,9 @@ footer {
 .red {
   background-color: red;
 }
-
+.lvl1 {
+  display: none;
+}
 .green {
   background-color: green;
 }
@@ -88,6 +89,12 @@ footer {
 
 .yellow {
   background-color: yellow;
+}
+.white {
+  background-color: white;
+}
+.purple {
+  background-color: purple;
 }
 
 .pressed {
@@ -109,7 +116,7 @@ button {
   }
 }
 @media (max-height: 700px) and (max-width: 480px) {
-    .btn {
+  .btn {
     height: 80px;
     width: 80px;
   }
