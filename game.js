@@ -75,7 +75,7 @@ function checkAnswer() {
     } else if (count === gamePattern.length - 1) {
       // так как каунт идет с нуля а длинна с 1 нужно вычисть -1 что бы они были равны.
       // переделать в иф елсе стеитмент если уровень делиться на 5 без остатка проигрывать победную музыку и иззменять текст H1
-      if (lvl % 10 === 0) {
+      if (lvl % 1 === 0) {
         $("h1").html("Excellent");
         let victory = new Audio("./sounds/victory.mp3");
         victory.play();
@@ -83,7 +83,7 @@ function checkAnswer() {
           count = 0;
           userClickedPattern = [];
           nextSequence();
-        }, 5500);
+        }, 5700);
       } else {
         $("h1").html("lvl<br> UP");
         setTimeout(function () {
