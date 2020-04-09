@@ -42,7 +42,7 @@ function nextSequence() {
       playSound(gamePattern[i]);
       i++;
       if (i === gamePattern.length) clearInterval(interval);
-    }, 500);
+    }, 600);
   } else {
     $("#white").removeClass("lvl1");
     $("#purple").removeClass("lvl1");
@@ -67,7 +67,7 @@ function nextSequence() {
       playSound(gamePattern[i]);
       i++;
       if (i === gamePattern.length) clearInterval(interval);
-    }, 500);
+    }, 600);
   }
   //sound
 }
@@ -157,10 +157,10 @@ function checkAnswer() {
           nextSequence();
         }, 5700);
       } else {
-        $("h1").html("lvl<br> UP");
         setTimeout(function () {
+          $("h1").html("lvl<br> UP");
           audio.vin.play();
-        }, 300);
+        }, 200);
         setTimeout(function () {
           count = 0;
           userClickedPattern = [];
