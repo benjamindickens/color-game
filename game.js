@@ -141,9 +141,9 @@ function checkAnswer() {
       count = 0;
       lvl = 0;
       setTimeout(() => {
-        $("h1").text("Press start");
         $("#white").addClass("lvl1");
         $("#purple").addClass("lvl1");
+        $("h1").text("Press start");
         $("button").fadeIn(100);
       }, 1500);
     } else if (count === gamePattern.length - 1) {
