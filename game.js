@@ -90,26 +90,32 @@ function playSound(name) {
   // let sound = new Audio(`./sounds/${name}.mp3`);
   switch (name) {
     case "red": {
+      audio.red.currentTime = 0.0;
       audio.red.play();
       break;
     }
     case "green": {
+      audio.green.currentTime = 0.0;
       audio.green.play();
       break;
     }
     case "yellow": {
+      audio.yellow.currentTime = 0.0;
       audio.yellow.play();
       break;
     }
     case "blue": {
+      audio.blue.currentTime = 0.0;
       audio.blue.play();
       break;
     }
     case "white": {
+      audio.white.currentTime = 0.0;
       audio.white.play();
       break;
     }
     case "purple": {
+      audio.purple.currentTime = 0.0;
       audio.purple.play();
       break;
     }
