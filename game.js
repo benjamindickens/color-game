@@ -18,71 +18,55 @@ let userClickedPattern = [];
 let buttonColors = ["red", "blue", "green", "yellow", "white", "purple"];
 let gamePattern = [];
 let lvl = 0;
+let pause = false;
 
 function nextSequence() {
   if (lvl < 10) {
+    pause = true;
+    lvl++;
+    $("h1").html(`Level ${lvl}`);
     let randomNumber = Math.floor(Math.random() * 4);
     let randomChosenColor = buttonColors[randomNumber];
     gamePattern.push(randomChosenColor);
-    lvl++;
-    $("h1").html(`Level<br> ${lvl}`);
-
-    let i = 1;
-    if (gamePattern.length === 1) {
-      setTimeout(() => {
-        $(`#${gamePattern[0]}`).fadeIn(100).fadeOut(100).fadeIn(100);
-        playSound(gamePattern[0]);
-      }, 600);
-    } else {
-      $(`#${gamePattern[0]}`).fadeIn(100).fadeOut(100).fadeIn(100);
-      playSound(gamePattern[0]);
-    }
-    setInterval(function () {
-      $(`#${gamePattern[i]}`).fadeIn(100).fadeOut(100).fadeIn(100);
+    let i = 0;
+    let interval = setInterval(() => {
+      $(`#${gamePattern[i]}`).fadeOut(100).fadeIn(100);
       playSound(gamePattern[i]);
       i++;
       if (i === gamePattern.length) clearInterval(interval);
-    }, 600);
+    }, 500);
+    setTimeout(() => {
+      pause = false;
+    }, 500 * gamePattern.length);
   } else {
     $("#white").removeClass("lvl1");
     $("#purple").removeClass("lvl1");
+    pause = true;
+    lvl++;
+    $("h1").html(`Level ${lvl}`);
     let randomNumber = Math.floor(Math.random() * 6);
     let randomChosenColor = buttonColors[randomNumber];
     gamePattern.push(randomChosenColor);
-    //animation
-    lvl++;
-    $("h1").html(`Level<br> ${lvl}`);
-    let i = 1;
-    if (gamePattern.length === 1) {
-      setTimeout(() => {
-        $(`#${gamePattern[0]}`).fadeIn(100).fadeOut(100).fadeIn(100);
-        playSound(gamePattern[0]);
-      }, 600);
-    } else {
-      $(`#${gamePattern[0]}`).fadeIn(100).fadeOut(100).fadeIn(100);
-      playSound(gamePattern[0]);
-    }
-    setInterval(function () {
-      $(`#${gamePattern[i]}`).fadeIn(100).fadeOut(100).fadeIn(100);
+    let i = 0;
+    let interval = setInterval(() => {
+      $(`#${gamePattern[i]}`).fadeOut(100).fadeIn(100);
       playSound(gamePattern[i]);
       i++;
       if (i === gamePattern.length) clearInterval(interval);
-    }, 600);
-  }
+    }, 500);
+    setTimeout(() => {
+      pause = false;
+    }, 500 * gamePattern.length);
   //sound
 }
-
+}
 $(".btn").on("click", function () {
-  if (gamePattern[0] !== undefined) {
+  if (pause === false && userClickedPattern.length < gamePattern.length) {
     let userChosenColor = this.getAttribute("id");
     userClickedPattern.push(userChosenColor);
-    // господи я король  если количество цветов которое нажимает игрок превышает длинну запрашшиваемого  гаим патерном перестает выполняться функция проверки и добавления
-    if (gamePattern.length >= userClickedPattern.length) {
-      checkAnswer();
-      console.log("user " + userClickedPattern); // check
-      playSound(this.getAttribute("id"));
-      animation(this.getAttribute("id"));
-    }
+    playSound(this.getAttribute("id"));
+    animation(this.getAttribute("id"));
+    checkAnswer(userClickedPattern.length - 1); // если длинна патерна ставновиться 1 это щначит что мы нажали 1 раз следовательно что бы полуить доступ к первому эллементу под индексом 0  все что нам надо вычитать -1 из количества нажаий выражаемое шириной ээрея
   }
 });
 
@@ -134,7 +118,7 @@ let count = 0;
 function checkAnswer() {
   if (count <= gamePattern.length) {
     if (gamePattern[count] !== userClickedPattern[count]) {
-      $("h1").html("ПОТРАЧЕНО<br>!!!");
+      $("h1").html("ПОТРАЧЕНО");
       audio.wrong.play();
       $("body").addClass("game-over");
       // $(".lol").removeClass("hide"); денсая пасхалочка
@@ -149,7 +133,7 @@ function checkAnswer() {
       setTimeout(() => {
         $("#white").addClass("lvl1");
         $("#purple").addClass("lvl1");
-        $("h1").text("Press start");
+        $("h1").html("Press start");
         $("button").fadeIn(100);
       }, 1500);
     } else if (count === gamePattern.length - 1) {
@@ -166,7 +150,7 @@ function checkAnswer() {
         }, 5700);
       } else {
         setTimeout(function () {
-          $("h1").html("lvl<br> UP");
+          $("h1").html("lvl UP");
           audio.vin.play();
         }, 200);
         setTimeout(function () {

@@ -37,7 +37,8 @@ footer {
   align-content: center;
   max-width: 635px;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   margin: 0 auto;
 }
 
@@ -46,6 +47,7 @@ footer {
   /* height: 200px; */
   height: 100px;
   width: 100px;
+
   border: 10px solid black;
   border-radius: 20%;
 }
@@ -112,21 +114,25 @@ button {
 }
 @media (max-width: 500px) {
   #level-title {
-    font-size: 2.3rem;
+    font-size: 1.8rem;
+  }
+  .lol {
+    font-size: 9.5px;
   }
 }
-@media (max-height: 700px) and (max-width: 480px) {
+
+@media (max-height: 735px) and (max-width: 480px) {
   .btn {
-    height: 80px;
-    width: 80px;
+    height: 75px;
+    width: 75px;
   }
   html {
-    font-size: 9px;
+    font-size: 12px;
   }
 }
 @media (max-height: 600px) and (max-width: 480px) {
   .lol {
-    font-size: 11px;
+    font-size: 8px;
   }
   .btn {
     height: 60px;
